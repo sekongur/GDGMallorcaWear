@@ -3,22 +3,20 @@ package com.gdgmallorcawear;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
+import android.widget.TextClock;
 import android.widget.TextView;
 
-public class MyActivity extends Activity {
+import java.util.TimeZone;
 
-    private TextView mTextView;
+public class MyActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
-        final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
-        stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
-            @Override
-            public void onLayoutInflated(WatchViewStub stub) {
-                mTextView = (TextView) stub.findViewById(R.id.text);
-            }
-        });
+        TextClock clockNewYork = (TextClock) findViewById(R.id.textClockNewYork);
+        TextClock clockShanghai = (TextClock) findViewById(R.id.textClockShanghai);
+        clockNewYork.setTimeZone("America/New_York");
+        clockShanghai.setTimeZone("Asia/Shanghai");
     }
 }

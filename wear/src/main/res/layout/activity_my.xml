@@ -1,13 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.wearable.view.WatchViewStub
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/watch_view_stub"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:rectLayout="@layout/rect_activity_my"
-    app:roundLayout="@layout/round_activity_my"
-    tools:context=".MyActivity"
-    tools:deviceIds="wear">
-</android.support.wearable.view.WatchViewStub>
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher" />
+
+    <TextClock
+        android:layout_toRightOf="@id/image_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/textClockMallorca"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/image_2"
+        android:layout_below="@id/image_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/newyork" />
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/textClockNewYork"
+        android:layout_toRightOf="@id/image_2"
+        android:layout_below="@id/image_1"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+
+    <ImageView
+        android:id="@+id/image_3"
+        android:layout_below="@id/image_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/shanghai" />
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/textClockShanghai"
+        android:layout_below="@id/image_2"
+        android:layout_toRightOf="@id/image_3"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+</RelativeLayout>
